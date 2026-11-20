@@ -1,31 +1,5 @@
 
 /* =========================================
-   Fonts
-========================================= */
-
-@font-face {
-  font-family: "NotoSansJP";
-  src: url("./fonts/NotoSansJP-Regular.ttf")
-       format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "NotoSansJP";
-  src: url("./fonts/NotoSansJP-Medium.ttf")
-       format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "ShipporiMincho";
-  src: url("./fonts/ShipporiMincho-Medium.ttf")
-       format("truetype");
-  font-weight: 500;
-}
-
-
-/* =========================================
    Basic
 ========================================= */
 
@@ -41,7 +15,7 @@ body {
   margin: 0;
   min-height: 100vh;
 
-  font-family: "NotoSansJP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   color: #025373;
 
   /* 淡いブルーの格子背景 */
@@ -257,7 +231,7 @@ a {
 ========================================= */
 
 .profile-name {
-  font-family: "NotoSansJP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 
   font-size: 32px;
   font-weight: 500;
@@ -418,7 +392,7 @@ a {
 }
 
 .sidebar h3 {
-  font-family: "NotoSansJP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 
   font-size: 23px;
   font-weight: 500;
