@@ -1,0 +1,571 @@
+
+/* =========================================
+   Fonts
+========================================= */
+
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("./fonts/NotoSansJP-Regular.ttf")
+       format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("./fonts/NotoSansJP-Medium.ttf")
+       format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "ShipporiMincho";
+  src: url("./fonts/ShipporiMincho-Medium.ttf")
+       format("truetype");
+  font-weight: 500;
+}
+
+
+/* =========================================
+   Basic
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: "NotoSansJP", sans-serif;
+  color: #025373;
+
+  /* 淡いブルーの格子背景 */
+  background-color: #F0F8FC;
+
+  background-image:
+    linear-gradient(
+      rgba(4, 138, 191, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(4, 138, 191, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  color: #025373;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================
+   Navigation
+========================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  padding: 10px;
+
+  background: rgba(2, 83, 115, 0.92);
+  border-radius: 0 0 14px 0;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.navbar a {
+  color: #FFFFFF;
+  margin-right: 20px;
+
+  text-decoration: none;
+  font-size: 1rem;
+
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  transition: background 0.2s;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   Header
+========================================= */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 35px;
+
+  max-width: 1150px;
+  width: 100%;
+
+  margin: 110px auto 40px;
+  padding: 0 30px;
+
+  text-align: left;
+}
+
+.header-name {
+  display: flex;
+  align-items: baseline;
+  gap: 25px;
+  min-width: 0;
+}
+
+.header-name h1 {
+  margin: 0;
+
+  font-size: 42px;
+  font-weight: 500;
+  color: #025373;
+
+  white-space: nowrap;
+}
+
+.english-name {
+  font-size: 23px;
+  font-weight: 500;
+  color: #639FC1;
+
+  white-space: nowrap;
+}
+
+.header-affiliation {
+  border-left: 2px solid #048ABF;
+  padding-left: 30px;
+
+  color: #025373;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-affiliation p {
+  margin: 5px 0;
+}
+
+
+/* =========================================
+   Page Layout
+========================================= */
+
+.page-layout {
+  display: grid;
+
+  /* 左：カード / 右：目次 */
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 40px;
+
+  max-width: 1150px;
+  width: 100%;
+
+  margin: 0 auto 70px;
+  padding: 0 30px;
+}
+
+.main-content {
+  min-width: 0;
+}
+
+
+/* =========================================
+   Content Cards
+========================================= */
+
+.content {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 0 25px;
+  padding: 35px 40px;
+
+  /* 半透明カード */
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow: 0 6px 20px rgba(2, 83, 115, 0.07);
+}
+
+
+/* =========================================
+   Section Headings
+========================================= */
+
+.content h2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  font-size: 30px;
+  font-weight: 500;
+  color: #025373;
+
+  margin: 0 0 25px;
+  padding: 0 0 15px;
+
+  border: none;
+  border-bottom: 1px solid #B5D5E6;
+}
+
+/* 黄色い丸 */
+.content h2::after {
+  content: "";
+
+  display: block;
+  flex-shrink: 0;
+
+  width: 10px;
+  height: 10px;
+
+  background: #ECC100;
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   Profile
+========================================= */
+
+.profile-name {
+  font-family: "NotoSansJP", sans-serif;
+
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+
+  margin: 25px 0 30px;
+}
+
+.profile-list {
+  display: grid;
+
+  grid-template-columns: 80px minmax(0, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.profile-list dt {
+  font-weight: 700;
+  margin: 0;
+}
+
+.profile-list dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   CV
+========================================= */
+
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.cv-list li {
+  display: grid;
+
+  grid-template-columns: 150px minmax(0, 1fr);
+  column-gap: 12px;
+
+  align-items: baseline;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.cv-date {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   Talks & Presentations
+========================================= */
+
+.TalksPresentations-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.TalksPresentations-list li {
+  display: grid;
+
+  grid-template-columns: 70px minmax(0, 1fr);
+  column-gap: 15px;
+
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+
+.TalksPresentations-list .date {
+  font-weight: 700;
+  color: #025373;
+  white-space: nowrap;
+}
+
+.talk-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.talk-info strong {
+  font-weight: 500;
+  color: #025373;
+}
+
+.talk-info small {
+  color: #607B98;
+}
+
+.authors {
+  font-size: 14px;
+  color: #45667C;
+  line-height: 1.7;
+}
+
+.authors u {
+  text-decoration-color: #ECC100;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+
+/* =========================================
+   Other Lists
+========================================= */
+
+.custom-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 3em;
+}
+
+.custom-list li::before {
+  content: attr(data-tag);
+
+  position: absolute;
+  left: 0;
+
+  font-weight: 700;
+  color: #025373;
+}
+
+.content li {
+  line-height: 2;
+}
+
+.tab-space {
+  padding-left: 2em;
+}
+
+
+/* =========================================
+   Sidebar / Contents
+========================================= */
+
+.sidebar {
+  position: sticky;
+  top: 30px;
+  align-self: start;
+
+  padding: 15px 0 15px 25px;
+  border-left: 1px solid #8FB8D0;
+}
+
+.sidebar h3 {
+  font-family: "NotoSansJP", sans-serif;
+
+  font-size: 23px;
+  font-weight: 500;
+  color: #639FC1;
+
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid #B5D5E6;
+}
+
+.sidebar a,
+.sidebar a:link,
+.sidebar a:visited {
+  display: block;
+  position: relative;
+
+  color: #025373;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  margin: 0 0 20px;
+  padding-left: 22px;
+
+  transition: color 0.2s;
+}
+
+/* 目次の黄色い短いライン */
+.sidebar a::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+
+  width: 12px;
+  height: 3px;
+
+  background: #ECC100;
+}
+
+.sidebar a:hover {
+  color: #048ABF;
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .site-header {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .header-name {
+    flex-wrap: wrap;
+    gap: 12px 25px;
+  }
+
+  .header-affiliation {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 100px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+
+  .header-name {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .header-name h1 {
+    font-size: 34px;
+  }
+
+  .english-name {
+    font-size: 18px;
+  }
+
+  .header-affiliation {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .page-layout {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 20px;
+    gap: 15px;
+  }
+
+  .sidebar {
+    position: static;
+    order: -1;
+
+    border-left: none;
+    padding: 10px 0;
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .content h2 {
+    font-size: 24px;
+  }
+
+  .cv-list li {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header-name h1 {
+    font-size: 29px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .profile-list {
+    grid-template-columns: 65px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .cv-list li,
+  .TalksPresentations-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
